@@ -113,22 +113,27 @@ fn main() {
     let mut input = String::new();
     io::stdin().read_line(&mut input).unwrap();
     let activity = input.trim().parse::<u16>().unwrap();
+
     println!("Enter role (0-3, 0 is viewer, 1 is buyer, 2 is seller, 3 is admin):");
     let mut input = String::new();
     io::stdin().read_line(&mut input).unwrap();
     let role = input.trim().parse::<u16>().unwrap();
+
     println!("Enter session id (1-127):");
     let mut input = String::new();
     io::stdin().read_line(&mut input).unwrap();
     let session_id = input.trim().parse::<u16>().unwrap();
+
     println!("Enter seats remaining (1-127):");
     let mut input = String::new();
     io::stdin().read_line(&mut input).unwrap();
     let seats_remaining = input.trim().parse::<u16>().unwrap();
+    
     println!("Enter endianness (0 or 1, 0 is little-endian, 1 is big-endian):");
     let mut input = String::new();
     io::stdin().read_line(&mut input).unwrap();
     let endianness = input.trim().parse::<u16>().unwrap();
+    
 
     let session = pack_session(activity, role, session_id, seats_remaining, endianness);
     print_session("Session:", session);
